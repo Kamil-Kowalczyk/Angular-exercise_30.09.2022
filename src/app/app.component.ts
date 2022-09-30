@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { CARS } from './cars';
+import { Car } from './car';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'cars';
+
+  cars: Car[] = CARS;
+
+  selectedCar!: Car;
+  show(car: Car): void {
+    this.selectedCar = car;
+  }
 }
